@@ -7,7 +7,7 @@ def main():
     load_dotenv(dotenv_path)
     token = os.getenv('TOKEN')
     post_delay = int(os.getenv('POST_DELAY'))
-    chat_id = "@SpaceDis"
+    chat_id = os.getenv('CHANNEL_ID')
     bot = telegram.Bot(token=token)
 
     images = os.listdir('images')
