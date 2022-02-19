@@ -34,8 +34,10 @@ def fetch_epic_photos(earth_urls):
     for img_index, earth_url in enumerate(earth_urls):
         img_id = img_index + 1
         path_to_save = f'images/earth{img_id}.png'
-        img_saver(earth_url, path_to_save)
-
+        try:
+            img_saver(earth_url, path_to_save)
+        except requests.exceptions.MissingSchema:
+            pass
 
 def main():
     dotenv_path = 'dot.env'
