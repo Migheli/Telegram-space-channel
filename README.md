@@ -52,10 +52,12 @@ POST_DELAY = '86400'
   
 ```  
 import fetch_nasa, fetch_spacex
+from pathlib import Path
 
 ```  
   
 ```  
+Path('images').mkdir(parents=True, exist_ok=True)
 api_key = os.getenv('API_KEY')
 
 epic_photos = fetch_nasa.get_epic_imgs(api_key)
