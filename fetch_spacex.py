@@ -48,8 +48,10 @@ def fetch_spacex_last_launch(img_urls):
         img_id = img_index + 1
         img_ext = get_file_extension(img_url)
         path_to_save = f'images/spacex{img_id}{img_ext}'
-        img_saver(img_url, path_to_save)
-
+        try:
+            img_saver(img_url, path_to_save)
+        except requests.exceptions.MissingSchema:
+            pass
 
 def main():
     dotenv_path = 'dot.env'
