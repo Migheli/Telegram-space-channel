@@ -1,4 +1,6 @@
-import telegram, os, time, fetch_nasa, fetch_spacex
+import telegram, os, time
+import fetch_nasa, fetch_spacex
+from pathlib import Path
 from dotenv import load_dotenv
 
 
@@ -10,8 +12,7 @@ def main():
     chat_id = os.getenv('CHANNEL_ID')
     bot = telegram.Bot(token=token)
 
-    images = os.listdir('images')
-
+    Path('images').mkdir(parents=True, exist_ok=True)
     api_key = os.getenv('API_KEY')
 
     epic_photos = fetch_nasa.get_epic_imgs(api_key)
@@ -19,6 +20,7 @@ def main():
     img_urls = fetch_spacex.get_spacex_imgs(api_key, 25)
     fetch_spacex.fetch_spacex_last_launch(img_urls)
 
+    images = os.listdir('images')
 
     while True:
         for image in images:
