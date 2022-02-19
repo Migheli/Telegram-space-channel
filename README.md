@@ -11,12 +11,14 @@ pip install -r requirements.txt
 ```
 ### Для начала работы Вам потребуется:
 1. Токен для доступа к API NASA. 
+
 Регистрируемся и получаем токен по адресу: https://api.nasa.gov/#signUp. Токен придет на Ваш адрес электронной почты, поэтому важно, чтобы Вы указали его корректно.
 Полученный токен сохраните в переменную `API_KEY` файла `dot.env` проекта:
 ```
 API_KEY = 'YOUR_SPACEX_TOKEN'
 ```
-2. Телеграмм чат-бот
+2. Телеграмм чат-бот.
+
 Инструкция по регистрации бота и получению токена здесь: https://smmplanner.com/blog/otlozhennyj-posting-v-telegram/ или здесь: https://habr.com/ru/post/262247/.
 Кратко: просто напишите в телеграмм боту @BotFather и следуйте его инструкциям. 
 Полученный токен сохраните в переменную `TOKEN` файла `dot.env` проекта:
@@ -24,6 +26,7 @@ API_KEY = 'YOUR_SPACEX_TOKEN'
 TOKEN ='YOUR_TELEGRAM_BOT_TOKEN'
 ```
 3. Создаем свой телеграмм канал
+
 Подробная инструкция по созданию канала здесь: https://smmplanner.com/blog/otlozhennyj-posting-v-telegram/.
 Имя канала сохраняем в переменную `CHANNEL_ID` файла `dot.env` проекта:
 ```
