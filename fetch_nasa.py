@@ -18,7 +18,12 @@ def get_epic_urls(api_key):
         img_date, img_name = response_dataset['date'], response_dataset['image']
         img_date = img_date.split(' ')[0]
         year, month, day = img_date.split('-')
-        earth_url = f'https://api.nasa.gov/EPIC/archive/natural/{year}/{month}/{day}/png/{img_name}.png?api_key={api_key}'
+        payload = {
+            "api_key": api_key,
+        }
+        response = requests.get(f'https://api.nasa.gov/EPIC/archive/natural/{year}/{month}/{day}/png/{img_name}.png',
+                                params=payload)
+        earth_url = response.url
         earth_urls.append(earth_url)
     return earth_urls
 
