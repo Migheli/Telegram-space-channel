@@ -13,7 +13,6 @@ def get_epic_urls(api_key):
     response = requests.get('https://api.nasa.gov/EPIC/api/natural', params=payload)
     response.raise_for_status()
     response_datasets = response.json()
-    print(len(response_datasets))
     earth_urls = []
     for response_dataset in response_datasets:
         img_date, img_name = response_dataset['date'], response_dataset['image']
