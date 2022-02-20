@@ -1,16 +1,9 @@
 import requests
 import os
-
 from pathlib import Path
 from urllib.parse import urlsplit
 from dotenv import load_dotenv
-
-
-def save_img(img_url, path_to_save):
-    response = requests.get(img_url)
-    response.raise_for_status()
-    with open(path_to_save, 'wb') as file:
-        file.write(response.content)
+from img_saver import save_img
 
 
 def get_img_url(url):

@@ -2,13 +2,7 @@ import requests
 from pathlib import Path
 from dotenv import load_dotenv
 import os
-
-
-def save_img(img_url, path_to_save):
-    response = requests.get(img_url)
-    response.raise_for_status()
-    with open(path_to_save, 'wb') as file:
-        file.write(response.content)
+from img_saver import save_img
 
 
 def get_epic_imgs(api_key):
