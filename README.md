@@ -60,13 +60,13 @@ from pathlib import Path
 ```  
   
 ```  
-Path('images').mkdir(parents=True, exist_ok=True)
-api_key = os.getenv('API_KEY')
+    Path('images').mkdir(parents=True, exist_ok=True)
+    api_key = os.getenv('NASA_API_KEY')
 
-epic_photos = fetch_nasa.get_epic_imgs(api_key)
-fetch_nasa.fetch_epic_photos(epic_photos)
-img_urls = fetch_spacex.get_spacex_imgs(api_key, 25)
-fetch_spacex.fetch_spacex_last_launch(img_urls)
+    epic_photos = fetch_nasa.get_epic_urls(api_key)
+    fetch_nasa.fetch_epic_photos(epic_photos)
+    img_urls = fetch_spacex.get_spacex_urls(api_key, 25)
+    fetch_spacex.fetch_spacex_last_launch(img_urls)
 ```
 Данный блок кода дает возможность пользователю не запускать скрипты `fetch_nasa.py`, `fetch_spacex.py`.
  Импорты и блок кода, указанные выше в файле `telebot.py` без потери функциональности можно удалить при отсутствии необходимости интеграции и автоматической загрузки фото при запуске только файла `telebot.py` и/или раздельном использовании скриптов.
