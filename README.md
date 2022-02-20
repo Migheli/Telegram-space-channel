@@ -15,7 +15,7 @@ pip install -r requirements.txt
 Регистрируемся и получаем токен по адресу: https://api.nasa.gov/#signUp. Токен придет на Ваш адрес электронной почты, поэтому важно, чтобы Вы указали его корректно.
 Полученный токен сохраните в переменную `API_KEY` файла `dot.env` проекта:
 ```
-API_KEY = 'YOUR_SPACEX_TOKEN'
+API_KEY='YOUR_SPACEX_TOKEN'
 ```
 2. Телеграмм чат-бот.
 
@@ -23,14 +23,14 @@ API_KEY = 'YOUR_SPACEX_TOKEN'
 Кратко: просто напишите в телеграмм боту @BotFather и следуйте его инструкциям. 
 Полученный токен сохраните в переменную `TOKEN` файла `dot.env` проекта:
 ```
-TOKEN ='YOUR_TELEGRAM_BOT_TOKEN'
+TOKEN='YOUR_TELEGRAM_BOT_TOKEN'
 ```
 3. Создаем свой телеграмм канал
 
 Подробная инструкция по созданию канала здесь: https://smmplanner.com/blog/otlozhennyj-posting-v-telegram/.
 Имя канала сохраняем в переменную `CHANNEL_ID` файла `dot.env` проекта:
 ```
-CHANNEL_ID = 'YOUR_CHANNEL_ID'
+CHANNEL_ID='YOUR_CHANNEL_ID'
 ```
 ### Описание работы программы
 Наша программа использует три скрипта: fetch_nasa.py, fetch_spacex.py, telebot.py:
@@ -42,11 +42,11 @@ CHANNEL_ID = 'YOUR_CHANNEL_ID'
 Как это можно сделать описано здесь: https://smmplanner.com/blog/otlozhennyj-posting-v-telegram/ (раздел "Добавляем бота в канал (или в чат)").
 Вот и все, нам осталось лишь выбрать интервал постинга (в секундах) и занести его в переменную `POST_DELAY` файла dot.env проекта:
 ```
-POST_DELAY = 'DELAY_IN_SECONDS'
+POST_DELAY='DELAY_IN_SECONDS'
 ```
 Например, для задержки постинга в сутки, код будет выглядеть так (в сутках 86400 секунд):
 ```
-POST_DELAY = '86400'
+POST_DELAY='86400'
 ```
 ### Перед запуском проекта
 Теперь Вы готовы к запуску проекта.
