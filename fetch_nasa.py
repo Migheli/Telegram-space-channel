@@ -38,7 +38,7 @@ def fetch_epic_photos(earth_urls):
 def main():
     dotenv_path = 'dot.env'
     load_dotenv(dotenv_path)
-    api_key = os.getenv('API_KEY')
+    api_key = os.getenv('NASA_API_KEY')
     epic_photos = get_epic_urls(api_key)
     fetch_epic_photos(epic_photos)
 

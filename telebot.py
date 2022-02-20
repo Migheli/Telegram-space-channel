@@ -7,17 +7,17 @@ from dotenv import load_dotenv
 def main():
     dotenv_path = 'dot.env'
     load_dotenv(dotenv_path)
-    token = os.getenv('TOKEN')
+    token = os.getenv('TELEGRAM_TOKEN')
     post_delay = int(os.getenv('POST_DELAY'))
-    chat_id = os.getenv('CHANNEL_ID')
+    chat_id = os.getenv('TELEGRAM_CHANNEL_ID')
     bot = telegram.Bot(token=token)
 
     Path('images').mkdir(parents=True, exist_ok=True)
-    api_key = os.getenv('API_KEY')
+    api_key = os.getenv('NASA_API_KEY')
 
-    epic_photos = fetch_nasa.get_epic_imgs(api_key)
+    epic_photos = fetch_nasa.get_epic_urls(api_key)
     fetch_nasa.fetch_epic_photos(epic_photos)
-    img_urls = fetch_spacex.get_spacex_imgs(api_key, 25)
+    img_urls = fetch_spacex.get_spacex_urls(api_key, 25)
     fetch_spacex.fetch_spacex_last_launch(img_urls)
 
     images = os.listdir('images')
