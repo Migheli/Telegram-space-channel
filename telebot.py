@@ -24,8 +24,9 @@ def main():
 
     while True:
         for image in images:
-            bot.send_photo(chat_id=chat_id, photo=open(f'images/{image}', 'rb'))
-            time.sleep(post_delay)
+            with open(f'images/{image}', 'rb') as photo:
+                bot.send_photo(chat_id=chat_id, photo=photo)
+                time.sleep(post_delay)
 
 
 if __name__ == '__main__':
