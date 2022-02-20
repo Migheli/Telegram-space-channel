@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import os
 
 
-def img_saver(img_url, path_to_save):
+def save_img(img_url, path_to_save):
     response = requests.get(img_url)
     response.raise_for_status()
     with open(path_to_save, 'wb') as file:
@@ -35,7 +35,7 @@ def fetch_epic_photos(earth_urls):
         img_id = img_index + 1
         path_to_save = f'images/earth{img_id}.png'
         try:
-            img_saver(earth_url, path_to_save)
+            save_img(earth_url, path_to_save)
         except requests.exceptions.MissingSchema:
             pass
 
