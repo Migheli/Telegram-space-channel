@@ -71,6 +71,20 @@ fetch_spacex.fetch_spacex_last_launch(img_urls)
 Данный блок кода дает возможность пользователю не запускать скрипты `fetch_nasa.py`, `fetch_spacex.py`.
  Импорты и блок кода, указанные выше в файле `telebot.py` без потери функциональности можно удалить при отсутствии необходимости интеграции и автоматической загрузки фото при запуске только файла `telebot.py` и/или раздельном использовании скриптов.
 
+### Пример запуска скрипта
+
+Запускаем скрипт из терминала стандартно, командой `telebot.py`: 
 
 
+```  
+your-computer:~/your-directory/this-project-name$ telebot.py
+```  
+В случае запуска отдельных скриптов, запускаем их аналогичным образом, командами `fetch_nasa.py`, `fetch_spacex.py` в терминале соответственно:
+
+```  
+your-computer:~/your-directory/this-project-name$ fetch_nasa.py
+```  
+```  
+your-computer:~/your-directory/this-project-name$ fetch_spacex.py
+```  
 
