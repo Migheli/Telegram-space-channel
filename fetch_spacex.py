@@ -6,14 +6,6 @@ from dotenv import load_dotenv
 from img_saver import save_img
 
 
-def get_img_url(url):
-    response = requests.get(url)
-    response.raise_for_status()
-    jsn = response.json()
-    url_imgs = jsn['links']['flickr_images']
-    return url_imgs
-
-
 def get_file_extension(url):
     parsed_url = urlsplit(url)
     filename = os.path.split(parsed_url.path)[1]
