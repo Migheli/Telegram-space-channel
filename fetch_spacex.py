@@ -37,10 +37,9 @@ def get_spacex_imgs(api_key, count_of_imgs):
 
 def fetch_spacex_last_launch(img_urls):
     Path('images').mkdir(parents=True, exist_ok=True)
-    for img_index, img_url in enumerate(img_urls):
-        img_id = img_index + 1
+    for img_index, img_url in enumerate(img_urls, start=1):
         img_ext = get_file_extension(img_url)
-        path_to_save = f'images/spacex{img_id}{img_ext}'
+        path_to_save = f'images/spacex{img_index}{img_ext}'
         try:
             save_img(img_url, path_to_save)
         except requests.exceptions.MissingSchema:
