@@ -6,7 +6,7 @@ from urllib.parse import urlsplit
 from dotenv import load_dotenv
 
 
-def img_saver(img_url, path_to_save):
+def save_img(img_url, path_to_save):
     response = requests.get(img_url)
     response.raise_for_status()
     with open(path_to_save, 'wb') as file:
@@ -49,7 +49,7 @@ def fetch_spacex_last_launch(img_urls):
         img_ext = get_file_extension(img_url)
         path_to_save = f'images/spacex{img_id}{img_ext}'
         try:
-            img_saver(img_url, path_to_save)
+            save_img(img_url, path_to_save)
         except requests.exceptions.MissingSchema:
             pass
 
