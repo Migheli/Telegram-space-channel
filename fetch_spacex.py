@@ -13,7 +13,7 @@ def get_file_extension(url):
     return file_extension
 
 
-def get_spacex_imgs(api_key, count_of_imgs):
+def get_spacex_urls(api_key, count_of_imgs):
     payload = {"api_key": api_key,
                "count": count_of_imgs,
                }
@@ -42,7 +42,7 @@ def main():
     load_dotenv(dotenv_path)
     api_key = os.getenv('API_KEY')
 
-    img_urls = get_spacex_imgs(api_key, 25)
+    img_urls = get_spacex_urls(api_key, 25)
     fetch_spacex_last_launch(img_urls)
 
 

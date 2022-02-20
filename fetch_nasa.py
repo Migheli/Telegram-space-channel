@@ -5,7 +5,7 @@ import os
 from img_saver import save_img
 
 
-def get_epic_imgs(api_key):
+def get_epic_urls(api_key):
     payload = {
         "api_key": api_key,
         "images": "",
@@ -39,7 +39,7 @@ def main():
     dotenv_path = 'dot.env'
     load_dotenv(dotenv_path)
     api_key = os.getenv('API_KEY')
-    epic_photos = get_epic_imgs(api_key)
+    epic_photos = get_epic_urls(api_key)
     fetch_epic_photos(epic_photos)
 
 
