@@ -11,11 +11,11 @@ def get_epic_imgs(api_key):
                }
     response = requests.get('https://api.nasa.gov/EPIC/api/natural', params=payload)
     response.raise_for_status()
-    jsons = response.json()
-    print(len(jsons))
+    response_datasets = response.json()
+    print(len(response_datasets))
     earth_urls = []
-    for jsn in jsons:
-        img_date, img_name = jsn['date'], jsn['image']
+    for response_dataset in response_datasets:
+        img_date, img_name = response_dataset['date'], response_dataset['image']
         img_date = img_date.split(' ')[0]
         year, month, day = img_date.split('-')
         earth_url = f'https://api.nasa.gov/EPIC/archive/natural/{year}/{month}/{day}/png/{img_name}.png?api_key={api_key}'

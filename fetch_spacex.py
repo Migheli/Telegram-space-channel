@@ -28,9 +28,9 @@ def get_spacex_imgs(api_key, count_of_imgs):
     response = requests.get('https://api.nasa.gov/planetary/apod', params=payload)
     response.raise_for_status()
     img_urls = []
-    jsons = response.json()
-    for jsn in jsons:
-        img_url = jsn['url']
+    response_datasets = response.json()
+    for response_dataset in response_datasets:
+        img_url = response_dataset['url']
         img_urls.append(img_url)
     return img_urls
 
