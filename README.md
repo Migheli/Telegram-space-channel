@@ -13,24 +13,24 @@ pip install -r requirements.txt
 1. Токен для доступа к API NASA. 
 
 Регистрируемся и получаем токен по адресу: https://api.nasa.gov/#signUp. Токен придет на Ваш адрес электронной почты, поэтому важно, чтобы Вы указали его корректно.
-Полученный токен сохраните в переменную `API_KEY` файла `dot.env` проекта:
+Полученный токен сохраните в переменную `NASA_API_KEY` файла `dot.env` проекта:
 ```
-API_KEY='YOUR_SPACEX_TOKEN'
+NASA_API_KEY='YOUR_SPACEX_TOKEN'
 ```
 2. Телеграмм чат-бот.
 
 Инструкция по регистрации бота и получению токена здесь: https://smmplanner.com/blog/otlozhennyj-posting-v-telegram/ или здесь: https://habr.com/ru/post/262247/.
 Кратко: просто напишите в телеграмм боту @BotFather и следуйте его инструкциям. 
-Полученный токен сохраните в переменную `TOKEN` файла `dot.env` проекта:
+Полученный токен сохраните в переменную `TELEGRAM_TOKEN` файла `dot.env` проекта:
 ```
-TOKEN='YOUR_TELEGRAM_BOT_TOKEN'
+TELEGRAM_TOKEN='YOUR_TELEGRAM_BOT_TOKEN'
 ```
 3. Создаем свой телеграмм канал
 
 Подробная инструкция по созданию канала здесь: https://smmplanner.com/blog/otlozhennyj-posting-v-telegram/.
-Имя канала сохраняем в переменную `CHANNEL_ID` файла `dot.env` проекта:
+Имя канала сохраняем в переменную `TELEGRAM_CHANNEL_ID` файла `dot.env` проекта:
 ```
-CHANNEL_ID='YOUR_CHANNEL_ID'
+TELEGRAM_CHANNEL_ID='YOUR_CHANNEL_ID'
 ```
 ### Описание работы программы
 Наша программа использует три скрипта: fetch_nasa.py, fetch_spacex.py, telebot.py:
