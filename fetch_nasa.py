@@ -6,9 +6,10 @@ from img_saver import save_img
 
 
 def get_epic_imgs(api_key):
-    payload = {"api_key": api_key,
-               "images": "",
-               }
+    payload = {
+        "api_key": api_key,
+        "images": "",
+        }
     response = requests.get('https://api.nasa.gov/EPIC/api/natural', params=payload)
     response.raise_for_status()
     response_datasets = response.json()
@@ -32,6 +33,7 @@ def fetch_epic_photos(earth_urls):
             save_img(earth_url, path_to_save)
         except requests.exceptions.MissingSchema:
             pass
+
 
 def main():
     dotenv_path = 'dot.env'
