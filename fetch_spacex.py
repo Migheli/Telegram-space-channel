@@ -40,8 +40,7 @@ def fetch_spacex_last_launch(img_urls):
 
 
 def main():
-    dotenv_path = 'dot.env'
-    load_dotenv(dotenv_path)
+    load_dotenv()
     api_key = os.getenv('NASA_API_KEY')
     img_urls = get_spacex_urls(api_key, 25)
     fetch_spacex_last_launch(img_urls)

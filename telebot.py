@@ -5,8 +5,7 @@ from dotenv import load_dotenv
 
 
 def main():
-    dotenv_path = 'dot.env'
-    load_dotenv(dotenv_path)
+    load_dotenv()
     token = os.getenv('TELEGRAM_TOKEN')
     post_delay = int(os.getenv('POST_DELAY'))
     chat_id = os.getenv('TELEGRAM_CHANNEL_ID')
