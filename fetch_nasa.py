@@ -30,8 +30,7 @@ def get_epic_urls(api_key):
 
 def fetch_epic_photos(earth_urls):
     Path('images').mkdir(parents=True, exist_ok=True)
-    for img_index, earth_url in enumerate(earth_urls):
-        img_id = img_index + 1
+    for img_id, earth_url in enumerate(earth_urls, start=1):
         path_to_save = f'images/earth{img_id}.png'
         try:
             download_img(earth_url, path_to_save)
