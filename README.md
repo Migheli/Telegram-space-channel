@@ -59,10 +59,9 @@ from pathlib import Path
 
 ```  
   
-```  
+```python  
     Path('images').mkdir(parents=True, exist_ok=True)
     api_key = os.getenv('NASA_API_KEY')
-
     epic_photos = fetch_nasa.get_epic_urls(api_key)
     fetch_nasa.fetch_epic_photos(epic_photos)
     img_urls = fetch_spacex.get_spacex_urls(api_key, 25)
