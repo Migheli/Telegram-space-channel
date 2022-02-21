@@ -2,7 +2,7 @@ import requests
 from pathlib import Path
 from dotenv import load_dotenv
 import os
-from img_saver import save_img
+from img_downloader import download_img
 
 
 def get_epic_urls(api_key):
@@ -34,7 +34,7 @@ def fetch_epic_photos(earth_urls):
         img_id = img_index + 1
         path_to_save = f'images/earth{img_id}.png'
         try:
-            save_img(earth_url, path_to_save)
+            download_img(earth_url, path_to_save)
         except requests.exceptions.MissingSchema:
             pass
 

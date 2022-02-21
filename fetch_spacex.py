@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 from urllib.parse import urlsplit
 from dotenv import load_dotenv
-from img_saver import save_img
+from img_downloader import download_img
 
 
 def get_file_extension(url):
@@ -34,7 +34,7 @@ def fetch_spacex_last_launch(img_urls):
         img_ext = get_file_extension(img_url)
         path_to_save = f'images/spacex{img_index}{img_ext}'
         try:
-            save_img(img_url, path_to_save)
+            download_img(img_url, path_to_save)
         except requests.exceptions.MissingSchema:
             pass
 
