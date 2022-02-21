@@ -14,9 +14,10 @@ def get_file_extension(url):
 
 
 def get_spacex_urls(api_key, count_of_imgs):
-    payload = {"api_key": api_key,
-               "count": count_of_imgs,
-               }
+    payload = {
+        "api_key": api_key,
+        "count": count_of_imgs,
+        }
     response = requests.get('https://api.nasa.gov/planetary/apod', params=payload)
     response.raise_for_status()
     img_urls = []
