@@ -16,7 +16,7 @@ def main():
 
     epic_photos = fetch_nasa.get_epic_urls(api_key)
     fetch_nasa.fetch_epic_photos(epic_photos)
-    img_urls = fetch_spacex.get_spacex_urls(api_key, 25)
+    img_urls = fetch_spacex.get_spacex_urls(api_key, 5)
     fetch_spacex.fetch_spacex_last_launch(img_urls)
 
     images = os.listdir('images')
@@ -25,7 +25,7 @@ def main():
         for image in images:
             with open(f'images/{image}', 'rb') as photo:
                 bot.send_photo(chat_id=chat_id, photo=photo)
-                time.sleep(post_delay)
+            time.sleep(post_delay)
 
 
 if __name__ == '__main__':
